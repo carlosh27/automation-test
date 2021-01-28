@@ -1,10 +1,17 @@
 package com.ui.actions;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
 
 public class BaseTest {
 	String browser = "web";
@@ -16,7 +23,13 @@ public class BaseTest {
 		driver = new ChromeDriver();
 		return driver;
 	}	
-	public WebElement findElement(By element) {
+	
+	public void openApplication(String url) {
+		driver.get(url);
+		driver.manage().window().maximize();
+	}
+	
+	public WebElement getElement(By element) {
 		return driver.findElement(element);
 	}
 	
@@ -32,7 +45,7 @@ public class BaseTest {
 		return driver.findElement(element).getText();
 	}
 	
-	public void navigate(String direction) {
+	public void browserNavigate(String direction) {
 		
 		switch (direction) {
 		case "back":
@@ -47,4 +60,27 @@ public class BaseTest {
 	public String getAtribute(By element, String atribute) {
 		return driver.findElement(element).getAttribute(atribute);
 	}
+	
+	public boolean isDisplayed(By element) {
+		boolean display = false;
+		try {
+			display = driver.findElement(element).isDisplayed();
+		}
+		catch (NoSuchElementException e) {
+			printInConsole("Element no displayed" + element);
+		}
+		return display;
+	}
+	
+	public void printInConsole(String message) {
+		System.out.println(message);
+	}
+	
+	public void wait(int seconds) throws InterruptedException {
+		seconds = seconds * 1000;
+		Thread.sleep(seconds); 
+	}
+	 
+	
+
 }
