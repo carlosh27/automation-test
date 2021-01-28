@@ -4,14 +4,16 @@
 		"appURL": "http://localhost:3000/shows",
 		"searchCriteria": "Batman",
 		"cardTitleChange": "Batman Unlimited",
-		"backgroundColorCode": "#4a148c"
+		"backgroundColorCode": "#4a148c",
+		"cardPosition": "2"
 	},
 	"Test02":{
 		"testName": "SuperMan Search",
 		"appURL": "http://localhost:3000/shows",
 		"searchCriteria": "Superman",
 		"cardTitleChange": "The New Adventures of Superman",
-		"backgroundColorCode": "#148c18"
+		"backgroundColorCode": "#148c18",
+		"cardPosition": "3"
 	}
 }
 

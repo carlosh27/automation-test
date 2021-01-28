@@ -17,17 +17,16 @@ public class GuitarInventorySteps extends GuitarInventoryPage{
 	GuitarInventoryPage page = new GuitarInventoryPage(driver);
 	
 	public void TypeSearch(String inputText) {
-		type(inputText, (By) page.searchField());
-		String validator = getText(page.searchButton());
-		boolean actual = false;
-		if(validator != "") {
-			actual = true;
-		}
-		System.out.println (validator);
-		assertEquals(actual, true);
+		type(inputText,page.searchField());
 	}
 	
 	public void submitSearch() {
 		click((By) page.searchButton());
+	}
+	
+	public void validateEmptySearchField() {
+		String actualValue = getText(page.searchField());
+		String expectedValue = "";
+		assertEquals(actualValue, expectedValue);
 	}
 }

@@ -26,8 +26,15 @@ public class TestData extends BaseTest{
 		return testData;
 	}
 	
-	public String getData(String key) {
-		return testData.get(key).toString();		
+	public String getData(String jsonKey) {
+		return testData.get(jsonKey).toString();		
 	}
 	
+	public int getIntData(String jsonKey) {
+		return Integer.parseInt(testData.get(jsonKey).toString());
+	}
+	
+	public void setStringData(String jsonKey, String value) {
+		testData.put(jsonKey, value);
+	}
 }

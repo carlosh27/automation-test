@@ -6,6 +6,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.app.steps.GuitarInventorySteps;
+import com.app.steps.ResultsDisplaySteps;
 import com.app.steps.SearchResultsSteps;
 import com.ui.actions.BaseTest;
 import com.ui.actions.TestData;
@@ -34,14 +35,18 @@ public class ApplicationBaseTest  extends BaseTest{
 		//create object for page steps
 		GuitarInventorySteps guitarInventorySteps = new GuitarInventorySteps(driver);
 		SearchResultsSteps searchResultSteps = new SearchResultsSteps(driver);
+		ResultsDisplaySteps resultDisplaySteps = new ResultsDisplaySteps(driver);
 		
 		//Start execution of test Steps
 		guitarInventorySteps.TypeSearch(testData.getData("searchCriteria"));
-		guitarInventorySteps.submitSearch();		
-		searchResultSteps.clickUrlCardResult(2);
+		guitarInventorySteps.submitSearch();
+		testData.setStringData("cardTitle", searchResultSteps.obtainCardTitleByPosition(testData.getIntData("cardPosition")));
+		searchResultSteps.clickUrlCardResultByPosition(testData.getIntData("cardPosition"));
+		resultDisplaySteps.validatePageDisplayed(testData.getData("cardTitle"));
 		browserNavigate("back");
 		searchResultSteps.changeCSSBackgoundByCardTitle(testData.getData("cardTitleChange"), testData.getData("backgroundColorCode"));
 		searchResultSteps.pressBack();
+		guitarInventorySteps.validateEmptySearchField();
 	}
 	
 }

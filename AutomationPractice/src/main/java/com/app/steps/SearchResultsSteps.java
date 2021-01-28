@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.NoSuchElementException;
 
 import com.app.pages.SearchResultsPage;
+import com.ui.actions.TestData;
 
 public class SearchResultsSteps extends SearchResultsPage{
 
@@ -15,9 +16,10 @@ public class SearchResultsSteps extends SearchResultsPage{
 	}
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	SearchResultsPage page = new SearchResultsPage(driver);
+	TestData testData = new TestData();
 	
-	public void clickUrlCardResult(int number) {
-		click((By) page.results(2));
+	public void clickUrlCardResultByPosition(int position) {
+		click((By) page.results(position));
 	}
 	
 	public void changeCSSBackgoundByCardTitle(String cardTitle, String backGroundColorCode) throws InterruptedException {
@@ -46,9 +48,13 @@ public class SearchResultsSteps extends SearchResultsPage{
 		return position;
 	}
 	
-	public void pressBack() {
+	public void pressBack() throws InterruptedException {
 		click(page.backButton());
+
 	}
 	
+	public String obtainCardTitleByPosition(int position){
+		return getText(page.resultCardTitle(position));
+	}
 	
 }
