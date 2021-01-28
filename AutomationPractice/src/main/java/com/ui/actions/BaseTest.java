@@ -23,4 +23,28 @@ public class BaseTest {
 	public void type(String inputText, By element){
 		driver.findElement(element).sendKeys(inputText);
 	}
+	
+	public void click(By element){
+		driver.findElement(element).click();
+	}
+	
+	public String getText(By element) {
+		return driver.findElement(element).getText();
+	}
+	
+	public void navigate(String direction) {
+		
+		switch (direction) {
+		case "back":
+			driver.navigate().back();
+			break;
+		case "forward":
+			driver.navigate().forward();
+			break;			
+		}
+	}
+	
+	public String getAtribute(By element, String atribute) {
+		return driver.findElement(element).getAttribute(atribute);
+	}
 }

@@ -6,6 +6,7 @@
       <class name="com.app.ui.tests.AppSeleniumTest">
         <methods>
           <include name="Setup"/>
+          <include name="Teardown"/>
           <include name="seleniumTest"/>
         </methods>
       </class> <!-- com.app.ui.tests.AppSeleniumTest -->

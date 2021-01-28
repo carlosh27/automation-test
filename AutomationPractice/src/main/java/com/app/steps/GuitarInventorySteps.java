@@ -1,5 +1,7 @@
 package com.app.steps;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,5 +18,16 @@ public class GuitarInventorySteps extends GuitarInventoryPage{
 	
 	public void TypeSearch(String inputText) {
 		type(inputText, (By) page.searchField());
+		String validator = getText(page.searchButton());
+		boolean actual = false;
+		if(validator != "") {
+			actual = true;
+		}
+		System.out.println (validator);
+		assertEquals(actual, true);
+	}
+	
+	public void submitSearch() {
+		click((By) page.searchButton());
 	}
 }

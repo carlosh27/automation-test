@@ -12,16 +12,15 @@ public class GuitarInventoryPage extends BaseTest{
 		
 	public GuitarInventoryPage(WebDriver driver) {
 		this.driver = driver;
-	}
-	
-	//By searchField = By.xpath("//input[@name='search']");
-	//@FindBy(xpath = "//input[@name='search']")
+	}	
+
 	public By searchField(){
 		By element = By.xpath("//input[@name='search']");
 		return element;
 	}
-
-//	public void TypeSearch(String inputText) {
-//		type(inputText, (By) searchField);
-//	}
+	
+	public By searchButton(){
+		By element = By.xpath("//button[@type='submit']");
+		return element;
+	}
 }
