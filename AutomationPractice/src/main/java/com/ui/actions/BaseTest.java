@@ -1,17 +1,16 @@
 package com.ui.actions;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+/*BaseTest contain the general methods use for a test
+ * Author: Carlos Humbrto Garcia Durán
+ * Creation date: 01-28-2021
+ * mail: carlos.h27@hotmail.com
+ */
 
 public class BaseTest {
 	String browser = "web";

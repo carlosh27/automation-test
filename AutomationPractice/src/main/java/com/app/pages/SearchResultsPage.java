@@ -5,6 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 import com.ui.actions.BaseTest;
 
+/*
+ * Author: Carlos Humbrto Garcia Durán
+ * Creation date: 01-28-2021
+ * mail: carlos.h27@hotmail.com
+ */
+
 public class SearchResultsPage extends BaseTest{
 
 	public SearchResultsPage(WebDriver driver) {

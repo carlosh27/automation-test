@@ -11,6 +11,12 @@ import com.app.steps.SearchResultsSteps;
 import com.ui.actions.BaseTest;
 import com.ui.actions.TestData;
 
+/*
+ * Author: Carlos Humbrto Garcia Durán
+ * Creation date: 01-28-2021
+ * mail: carlos.h27@hotmail.com
+ */
+
 public class ApplicationBaseTest  extends BaseTest{
 
 	@BeforeTest

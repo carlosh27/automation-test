@@ -5,6 +5,12 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
+/*
+ * Author: Carlos Humbrto Garcia Durán
+ * Creation date: 01-28-2021
+ * mail: carlos.h27@hotmail.com
+ */
+
 public class Test_Application_GuitarInventory extends ApplicationBaseTest{
 	
 	String testDataPath = 	"/src/main/resources/testSpec/app/testData/app_testSpec.json";
