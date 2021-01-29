@@ -6,7 +6,7 @@
       <class name="com.app.ui.tests.Test_Application_GuitarInventory">
         <methods>
           <include name="Teardown"/>
-          <include name="Test_Application_GI_Batman"/>
+          <include name="seleniumBaseTest"/>
           <include name="Setup"/>
         </methods>
       </class> <!-- com.app.ui.tests.Test_Application_GuitarInventory -->

@@ -29,7 +29,6 @@ public class ApplicationBaseTest  extends BaseTest{
 		driver.quit();
 	}
 	
-	@Test
 	public void seleniumBaseTest(String testCaseNumber, String testDataPath) throws IOException, InterruptedException, ParseException {
 		//Set TestData for JSON
 		TestData testData = new TestData();
