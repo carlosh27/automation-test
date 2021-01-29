@@ -35,7 +35,7 @@ public class SearchResultsSteps extends SearchResultsPage{
 		js.executeScript("document.getElementsByClassName(\"card\")["+ position +"].className='card'");
 		js.executeScript("document.getElementsByClassName(\"card\")["+ position +"].style.backgroundColor='"+backGroundColorCode+"'");
 		getElement(page.resultCardTitle(position+2)).click();
-		wait(5);
+		wait(3);
 	}
 	
 	//Find the postion of a Cart using the card title
